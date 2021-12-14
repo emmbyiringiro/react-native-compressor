@@ -202,8 +202,7 @@ func makeValidUri(filePath: String) -> String {
     
     let fileSize=self.getfileSize(forURL: url);
     
-    if(fileSize>16)
-    {
+   
         if(options["compressionMethod"] as! String=="auto")
         {
             autoCompressionHelper(url: url, options:options) { progress in
@@ -227,13 +226,8 @@ func makeValidUri(filePath: String) -> String {
         
         
 
-    }
-    else
-    {
-        onCompletion(url)
-    }
-    
-    
+  
+ 
   
 }
 

@@ -35,8 +35,7 @@ public class AutoVideoCompression {
     File file=new File(srcPath);
     float sizeInBytes = file.length();
     float sizeInMb = sizeInBytes / (1024 * 1024);
-    if(sizeInMb>16)
-    {
+    
       String destinationPath = generateCacheFilePath("mp4", reactContext);
       int actualHeight =Integer.parseInt(metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_HEIGHT));
       int actualWidth = Integer.parseInt(metaRetriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_VIDEO_WIDTH));
@@ -77,11 +76,7 @@ public class AutoVideoCompression {
         }
       });
 
-      }
-      else
-      {
-        promise.resolve(fileUrl);
-      }
+     
     } catch (Exception ex) {
       promise.reject(ex);
     }
